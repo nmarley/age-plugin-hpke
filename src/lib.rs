@@ -1,10 +1,10 @@
 use std::io::{self};
 
-use agile::{agile_gen_keypair, AeadAlg, KemAlg};
+use agile::{AeadAlg, KemAlg, agile_gen_keypair};
 
 use bech32::{ToBase32, Variant};
 use internal::{Identity, Recipient};
-use rand::{rngs::StdRng, SeedableRng};
+use rand::{SeedableRng, rngs::StdRng};
 
 use crate::internal::{IdentityPlugin, RecipientPlugin};
 

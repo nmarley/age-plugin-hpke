@@ -2,14 +2,14 @@ use std::collections::HashMap;
 
 use age_core::{format::Stanza, secrecy::ExposeSecret};
 use age_plugin::{identity, recipient};
-use base64::{engine::general_purpose::STANDARD_NO_PAD as BASE64, Engine};
-use bincode::{config, Decode, Encode};
-use rand::{rngs::StdRng, SeedableRng};
+use base64::{Engine, engine::general_purpose::STANDARD_NO_PAD as BASE64};
+use bincode::{Decode, Encode, config};
+use rand::{SeedableRng, rngs::StdRng};
 
 use crate::agile::{
-    agile_setup_receiver, agile_setup_sender, AeadAlg, AgileAeadTag, AgileEncappedKey,
-    AgileKeypair, AgileOpModeR, AgileOpModeRTy, AgileOpModeS, AgileOpModeSTy, AgilePrivateKey,
-    AgilePublicKey, KdfAlg, KemAlg,
+    AeadAlg, AgileAeadTag, AgileEncappedKey, AgileKeypair, AgileOpModeR, AgileOpModeRTy,
+    AgileOpModeS, AgileOpModeSTy, AgilePrivateKey, AgilePublicKey, KdfAlg, KemAlg,
+    agile_setup_receiver, agile_setup_sender,
 };
 
 pub const STANZA_TAG: &str = "hpke";
