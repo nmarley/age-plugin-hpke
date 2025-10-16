@@ -25,11 +25,12 @@ fn main() {
     }
 
     if let Some(args) = cli.generate
-        && args.generate {
-            generate(
-                &args.associated_data.unwrap(),
-                args.kem.unwrap(),
-                args.aead.unwrap(),
-            )
-        }
+        && args.generate
+    {
+        generate(
+            &args.associated_data.unwrap(),
+            args.kem.unwrap(),
+            args.aead.unwrap(),
+        )
+    }
 }
