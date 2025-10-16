@@ -223,11 +223,11 @@ impl age_plugin::identity::IdentityPluginV1 for IdentityPlugin {
         let mut file_keys = HashMap::with_capacity(files.len());
 
         for (file, stanzas) in files.iter().enumerate() {
-            for (_stanza_index, stanza) in stanzas.iter().enumerate() {
+            for stanza in stanzas.iter() {
                 if stanza.tag != STANZA_TAG {
                     continue;
                 }
-                for (_identity_index, identity) in self.identities.iter().enumerate() {
+                for identity in self.identities.iter() {
                     let file_key = age::Identity::unwrap_stanza(identity, stanza).unwrap();
                     let r = file_key.map_err(|e| {
                         vec![identity::Error::Identity {

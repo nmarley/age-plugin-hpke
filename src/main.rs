@@ -24,13 +24,12 @@ fn main() {
         return run_state_machine(state_machine);
     }
 
-    if let Some(args) = cli.generate {
-        if args.generate {
+    if let Some(args) = cli.generate
+        && args.generate {
             generate(
                 &args.associated_data.unwrap(),
                 args.kem.unwrap(),
                 args.aead.unwrap(),
             )
         }
-    }
 }
